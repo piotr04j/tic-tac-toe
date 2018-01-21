@@ -1,6 +1,6 @@
 # Project Title
 
-It's simple application show how we can animate words and letter using only pure JavaScript.
+It's basic configuration of gulp (for compiling sass) and babel
 
 ## License
 
