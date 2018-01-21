@@ -1,7 +1,7 @@
 {
   "name": "wgb",
   "version": "1.0.0",
-  "description": "basic configuration of webpack gulp and babel",
+  "description": "Simple app which show several option animations words. This app use only JavaScript.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
