@@ -11,13 +11,13 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./app/css'));
 });
 
-gulp.task('gbable', () =>
+gulp.task('gbable', function (){
     gulp.src('./src/js/*.js')
         .pipe(babel({
             presets: ['env']
         }))
         .pipe(gulp.dest('./app/js/script'))
-);
+});
 
  
 gulp.task('work', function () {
