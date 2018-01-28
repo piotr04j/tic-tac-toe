@@ -1,6 +1,6 @@
 # Project Title
 
-It's basic configuration of gulp (for compiling sass) and babel
+It's Tic Tac Toe game.
 
 ## License
 
