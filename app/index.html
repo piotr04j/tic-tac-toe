@@ -1,15 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
+    <link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
+
 <body>
     <h1 id="js-game-title"></h1>
+    <div class="wrapper">
+        <div class="board">
+            <div class="board__row">
+                <div class="a--one board__field"></div>
+                <div class="b--one board__field"></div>
+                <div class="c--one board__field"></div>
+            </div>
+            <div class="board__row">
+                <div class="a--two board__field"></div>
+                <div class="b--two board__field"></div>
+                <div class="c--two board__field"></div>
+            </div>
+            <div class="board__row">
+                <div class="a--three board__field"></div>
+                <div class="b--three board__field"></div>
+                <div class="c--three board__field"></div>
+            </div>
+
+        </div>
+        <div class="players">
+            <div class="player player__one">
+                <p class="score" id="js-player__one__score"></p>
+                <p class="name" id="js-player__one__name"></p>
+            </div>
+            <div class="player player__two">
+                <p class="score" id="js-player__two__score"></p>
+                <p class="name" id="js-player__two__name"></p>
+            </div>
+        </div>
+        <div class="menu">
+            <button class="interface_btn" id="js-start">
+                Start
+            </button>
+            <button class="interface_btn" id="js-help">
+                help
+            </button>
+            <!-- <button class="interface_btn" id="js-start">
+                player vs. player
+            </button> -->
+            <button class="interface_btn" id="js-reset">
+                reset
+            </button>
+        </div>
+        <div class="popup--help">
+            <div class="popup__content">
+                <h2>Rule</h2>
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                    aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                    Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                    dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
+                    sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore
+                    magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+                    suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
+                    qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
+                    voluptas nulla pariatur?</p>
+            </div>
+        </div>
+    </div>
     <script src="./js/game.js" type="text/javascript"></script>
     <script src="./js/userInterface.js" type="text/javascript"></script>
     <script src="./js/main.js" type="text/javascript"></script>
 </body>
+
 </html>
