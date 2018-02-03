@@ -12,30 +12,30 @@
 <body>
     <h1 id="js-game-title"></h1>
     <div class="wrapper">
-        <div class="board">
+        <div class="board" id="js-board">
             <div class="board__row">
-                <div class="a--one board__field"></div>
-                <div class="b--one board__field"></div>
-                <div class="c--one board__field"></div>
+                <div class="a--one board__field" data-row="0" data-column="0"></div>
+                <div class="b--one board__field" data-row="0" data-column="1"></div>
+                <div class="c--one board__field" data-row="0" data-column="2"></div>
             </div>
             <div class="board__row">
-                <div class="a--two board__field"></div>
-                <div class="b--two board__field"></div>
-                <div class="c--two board__field"></div>
+                <div class="a--two board__field" data-row="1" data-column="0"></div>
+                <div class="b--two board__field" data-row="1" data-column="1"></div>
+                <div class="c--two board__field" data-row="1" data-column="2"></div>
             </div>
             <div class="board__row">
-                <div class="a--three board__field"></div>
-                <div class="b--three board__field"></div>
-                <div class="c--three board__field"></div>
+                <div class="a--three board__field" data-row="2" data-column="0"></div>
+                <div class="b--three board__field" data-row="2" data-column="1"></div>
+                <div class="c--three board__field" data-row="2" data-column="2"></div>
             </div>
 
         </div>
         <div class="players">
-            <div class="player player__one">
+            <div class="player player__one " id="js-player-one">
                 <p class="score" id="js-player__one__score"></p>
                 <p class="name" id="js-player__one__name"></p>
             </div>
-            <div class="player player__two">
+            <div class="player player__two active" id="js-player-two">
                 <p class="score" id="js-player__two__score"></p>
                 <p class="name" id="js-player__two__name"></p>
             </div>
