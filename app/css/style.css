@@ -153,3 +153,32 @@ h1 {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
+
+.player {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse; }
+
+.player__one {
+  left: 5%; }
+
+.player__two {
+  right: 5%; }
+
+@keyframes Active {
+  0% {
+    color: #f00; }
+  25% {
+    color: #000; }
+  50% {
+    color: #f00; }
+  75% {
+    color: #000; }
+  100% {
+    color: #f00; } }
+
+.active p {
+  animation: Active 2s infinite; }

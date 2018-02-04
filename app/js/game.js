@@ -20,16 +20,26 @@ var GAME = GAME || {};
 
 	//create 
 
-	var createChequer = function createChequer(type) {
-		this.type = type;
+	var Chequer = function Chequer(type, active) {
+		this.type = type, this.activePayer = active;
+		// this.checkPlayer = function(player){
+
+		// };
 		this.insertToBoard = function (element) {
 			element.innerHTML = this.type;
+		};
+		this.endOfTurn = function (act) {
+			if (act === 0) {
+				act = 1;
+			} else {
+				var _act = 0;
+			}
 		};
 	};
 
 	//sub module return
 
-	sub.board = board, sub.createChequer = createChequer;
+	sub.board = board, sub.Chequer = Chequer;
 
 	return sub;
 })(GAME);

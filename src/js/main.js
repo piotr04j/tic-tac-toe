@@ -5,7 +5,11 @@ let APP = APP || {};
 	//variuables 
 
 	let boardFront = document.getElementById('js-board'),
-		playerOne = document.getElementById('js-player-one');
+		playerOne = document.getElementById('js-player-one'),
+		playerTwo = document.getElementById('js-player-two'),
+		activePlayer = 0,// value to check which player is active
+		point = 1;
+		playersScores= [0,0];
 
 	//depediences
 
@@ -14,26 +18,38 @@ let APP = APP || {};
 	boardFront.addEventListener('click',function(event){
 		
 		let target = event.target,
-			row, column, chequer, playerActive;
+			row, column, chequer;
 
-		if(target.classList.contains('board__field')){
+		// check what filed was cliked and assign value from cliked field
+		if(target.classList.contains('board__field')){ 
 			row = target.dataset.row,
 			column = target.dataset.column;
 
 		}
 
+		// check is filed was cliked before
 		if(gameData.board[row][column] === false || gameData.board[row][column] === undefined ){
 
-			if(playerOne.classList.contains('active')){
-				chequer = new gameData.createChequer('X');
+
+			if(activePlayer === 0){
+				chequer = new gameData.Chequer('X');
+				playerOne.classList.remove('active');
+				playerTwo.classList.add('active');
+				activePlayer = 1;
 			} else {
-				chequer = new gameData.createChequer('O');
+				chequer = new gameData.Chequer('O');
+				playerTwo.classList.remove('active');
+				playerOne.classList.add('active');		
+				activePlayer = 0;
 			}
-			
+
+			// push chequer to arr
+			gameData.board[row][column] = chequer.type;
+			// display chequer on screen
 			chequer.insertToBoard(target);
-			//nastepnie dodajemy piona do tabeli
+			chequer.endOfTurn(activePlayer);
 			//sprawdzamy warunki
-			gameData.board[row][column] = "x";
+			
 		} else {
 			alert('niedozwolony ruch');
 		}

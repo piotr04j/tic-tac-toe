@@ -20,19 +20,29 @@ let GAME = GAME || {};
 
 	//create 
 
-	let createChequer = function(type){
-		this.type = type;
+	let Chequer = function(type,active){
+		this.type = type,
+		this.activePayer = active;
+		// this.checkPlayer = function(player){
+
+		// };
 		this.insertToBoard = function(element){
 			element.innerHTML = this.type;
 		};
-	
+		this.endOfTurn = function(act){
+			if(act === 0){
+				act = 1;
+			} else {
+				let act = 0;
+			}
+		};
 	};
 
 
 	//sub module return
 
 	sub.board = board,
-	sub.createChequer = createChequer;
+	sub.Chequer = Chequer;
 
 
 	return sub;
