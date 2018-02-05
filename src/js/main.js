@@ -8,7 +8,7 @@ let APP = APP || {};
 		playerOne = document.getElementById('js-player-one'),
 		playerTwo = document.getElementById('js-player-two'),
 		activePlayer = 0,// value to check which player is active
-		point = 1;
+		point = 1,
 		playersScores= [0,0];
 
 	//depediences
@@ -48,7 +48,8 @@ let APP = APP || {};
 			// display chequer on screen
 			chequer.insertToBoard(target);
 			chequer.endOfTurn(activePlayer);
-			//sprawdzamy warunki
+			let win = chequer.checkWin(gameData.board);
+			console.log(win);
 			
 		} else {
 			alert('niedozwolony ruch');
