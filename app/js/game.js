@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var GAME = GAME || {};
 
@@ -28,11 +28,12 @@ var GAME = GAME || {};
 		this.insertToBoard = function (element) {
 			element.innerHTML = this.type;
 		};
+		// end turn and change player
 		this.endOfTurn = function (act) {
 			if (act === 0) {
-				act = 1;
+				return 1;
 			} else {
-				act = 0;
+				return 0;
 			}
 		};
 		this.checkWin = function (arr) {
@@ -58,6 +59,17 @@ var GAME = GAME || {};
 				return true;
 			} else {
 				return false;
+			}
+		};
+		this.startNextTurn = function (arr, elements) {
+			for (var _i2 = 0; _i2 < 3; _i2++) {
+				for (var j = 0; j < 3; j++) {
+					arr[_i2][j] = false;
+				}
+			}
+			for (var _i3 = 0; _i3 < elements.length; _i3++) {
+				elements[_i3].innerHTML = '';
+				console.log('trolo');
 			}
 		};
 	};

@@ -5,10 +5,12 @@ let APP = APP || {};
 	//variuables 
 
 	let boardFront = document.getElementById('js-board'),
+		boardField = document.getElementsByClassName('board__field'),
 		playerOne = document.getElementById('js-player-one'),
 		playerTwo = document.getElementById('js-player-two'),
+		playerOneScore = document.getElementById('js-player__one__score'),
+		playerTwoScore = document.getElementById('js-player__two__score'),
 		activePlayer = 0,// value to check which player is active
-		point = 1,
 		playersScores= [0,0];
 
 	//depediences
@@ -32,25 +34,46 @@ let APP = APP || {};
 
 
 			if(activePlayer === 0){
-				chequer = new gameData.Chequer('X');
+				chequer = new gameData.Chequer('O');
 				playerOne.classList.remove('active');
 				playerTwo.classList.add('active');
-				activePlayer = 1;
 			} else {
-				chequer = new gameData.Chequer('O');
+				chequer = new gameData.Chequer('X');
 				playerTwo.classList.remove('active');
 				playerOne.classList.add('active');		
-				activePlayer = 0;
 			}
 
 			// push chequer to arr
 			gameData.board[row][column] = chequer.type;
 			// display chequer on screen
 			chequer.insertToBoard(target);
-			chequer.endOfTurn(activePlayer);
-			let win = chequer.checkWin(gameData.board);
-			console.log(win);
 			
+			let win = chequer.checkWin(gameData.board);
+			
+			if(win){
+				if(activePlayer === 0){
+					//add points
+					playersScores[activePlayer] += 1;
+					playerOneScore.innerHTML = playersScores[activePlayer];
+					if(playersScores[activePlayer] > 2) {
+						alert('Player One Win!');
+					}
+					chequer.startNextTurn(gameData.board,boardField);
+					activePlayer = 1;
+				} else {
+					playersScores[activePlayer] += 1;
+					playerTwoScore.innerHTML = playersScores[activePlayer];
+					if(playersScores[activePlayer] > 2) {
+						alert('Player Two Win!');
+					}
+					chequer.startNextTurn(gameData.board,boardField);
+					activePlayer = 0;
+				}	
+
+			} else {
+				activePlayer = chequer.endOfTurn(activePlayer);
+			}
+				
 		} else {
 			alert('niedozwolony ruch');
 		}

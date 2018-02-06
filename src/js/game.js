@@ -29,11 +29,12 @@ let GAME = GAME || {};
 		this.insertToBoard = function(element){
 			element.innerHTML = this.type;
 		};
+		// end turn and change player
 		this.endOfTurn = function(act){
 			if(act === 0){
-				act = 1;
+				return 1;
 			} else {
-				act = 0;
+				return 0;
 			}
 		};
 		this.checkWin = function(arr){
@@ -61,6 +62,18 @@ let GAME = GAME || {};
 			} else {
 				return false;
 			}
+		};
+		this.startNextTurn = function(arr,elements){
+			for(let i = 0; i < 3; i++){
+				for(let j = 0; j < 3; j++){
+					arr[i][j] = false;
+				}
+			}
+			for(let i = 0;i < elements.length ; i++){
+				elements[i].innerHTML = '';
+				console.log('trolo');
+			}
+			
 		};
 	};
 
