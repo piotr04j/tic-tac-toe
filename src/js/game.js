@@ -1,11 +1,13 @@
 let GAME = GAME || {};
 
-(function(gm){
+(function(gm, ui){
 
 
 	//variuables
 
-	
+	// depediences
+
+	let userInterfave = ui;
 
 	//sub module
 
@@ -63,27 +65,26 @@ let GAME = GAME || {};
 				return false;
 			}
 		};
-		this.startNextTurn = function(arr,elements){
-			for(let i = 0; i < 3; i++){
-				for(let j = 0; j < 3; j++){
-					arr[i][j] = false;
-				}
-			}
-			for(let i = 0;i < elements.length ; i++){
-				elements[i].innerHTML = '';
-				console.log('trolo');
-			}
+		// this.startNextTurn = function(arr,elements){
+		// 	for(let i = 0; i < 3; i++){
+		// 		for(let j = 0; j < 3; j++){
+		// 			arr[i][j] = false;
+		// 		}
+		// 	}
+		// 	for(let i = 0;i < elements.length ; i++){
+		// 		elements[i].innerHTML = '';
+		// 	}
 			
-		};
+		// };
 	};
-
 
 	//sub module return
 
+	
 	sub.board = board,
 	sub.Chequer = Chequer;
 
 
 	return sub;
 
-})(GAME);
+})(GAME, UI);

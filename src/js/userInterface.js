@@ -32,8 +32,32 @@ let UI = UI || {};
 		
 	showTitleLetterByLetter(titleDestination, title, 1000);
 	
+	let nextTurn = function(arr,elements){
+		for(let i = 0; i < 3; i++){
+			for(let j = 0; j < 3; j++){
+				arr[i][j] = false;
+			}
+		}
+		for(let i = 0;i < elements.length ; i++){
+			elements[i].innerHTML = '';
+		}
 	
+	};
+
+	let init = function(arr, elemnt,scoreOne, scoreTwo){
+		nextTurn(arr, elemnt);
+		scoreOne.innerHTML = 0;
+		scoreTwo.innerHTML = 0;
+
+	};
+
+
 	
+	sub.nextTurn = nextTurn;
+	sub.init= init;
+
+
+
 	return sub;
 	
 })(UI);

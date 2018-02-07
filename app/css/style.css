@@ -130,22 +130,6 @@ h1 {
   background: #ffffff;
   padding: 50px; }
 
-@-webkit-keyframes Theme {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-@-moz-keyframes Theme {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
 @keyframes Theme {
   0% {
     background-position: 0% 50%; }
@@ -182,3 +166,30 @@ h1 {
 
 .active p {
   animation: Active 2s infinite; }
+
+@keyframes Fade {
+  to {
+    opacity: 1; } }
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn .5s ease-in 1 forwards; }
+
+.pause-fade {
+  animation-play-state: paused; }
+
+.popup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 50vh;
+  border: 3px solid #000000;
+  box-shadow: -10px 10px 15px rgba(0, 0, 0, 0.7); }
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); }

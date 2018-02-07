@@ -33,5 +33,25 @@ var UI = UI || {};
 
 	showTitleLetterByLetter(titleDestination, title, 1000);
 
+	var nextTurn = function nextTurn(arr, elements) {
+		for (var i = 0; i < 3; i++) {
+			for (var j = 0; j < 3; j++) {
+				arr[i][j] = false;
+			}
+		}
+		for (var _i = 0; _i < elements.length; _i++) {
+			elements[_i].innerHTML = '';
+		}
+	};
+
+	var init = function init(arr, elemnt, scoreOne, scoreTwo) {
+		nextTurn(arr, elemnt);
+		scoreOne.innerHTML = 0;
+		scoreTwo.innerHTML = 0;
+	};
+
+	sub.nextTurn = nextTurn;
+	sub.init = init;
+
 	return sub;
 })(UI);

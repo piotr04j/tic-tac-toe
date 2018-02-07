@@ -1,11 +1,14 @@
-'use strict';
+"use strict";
 
 var GAME = GAME || {};
 
-(function (gm) {
+(function (gm, ui) {
 
 	//variuables
 
+	// depediences
+
+	var userInterfave = ui;
 
 	//sub module
 
@@ -61,22 +64,23 @@ var GAME = GAME || {};
 				return false;
 			}
 		};
-		this.startNextTurn = function (arr, elements) {
-			for (var _i2 = 0; _i2 < 3; _i2++) {
-				for (var j = 0; j < 3; j++) {
-					arr[_i2][j] = false;
-				}
-			}
-			for (var _i3 = 0; _i3 < elements.length; _i3++) {
-				elements[_i3].innerHTML = '';
-				console.log('trolo');
-			}
-		};
+		// this.startNextTurn = function(arr,elements){
+		// 	for(let i = 0; i < 3; i++){
+		// 		for(let j = 0; j < 3; j++){
+		// 			arr[i][j] = false;
+		// 		}
+		// 	}
+		// 	for(let i = 0;i < elements.length ; i++){
+		// 		elements[i].innerHTML = '';
+		// 	}
+
+		// };
 	};
 
 	//sub module return
 
+
 	sub.board = board, sub.Chequer = Chequer;
 
 	return sub;
-})(GAME);
+})(GAME, UI);

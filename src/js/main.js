@@ -1,6 +1,6 @@
 let APP = APP || {};
     
-(function(app,game){
+(function(app,game,ui){
 
 	//variuables 
 
@@ -10,12 +10,14 @@ let APP = APP || {};
 		playerTwo = document.getElementById('js-player-two'),
 		playerOneScore = document.getElementById('js-player__one__score'),
 		playerTwoScore = document.getElementById('js-player__two__score'),
+		startBtn = document.getElementById('js-start'),
 		activePlayer = 0,// value to check which player is active
 		playersScores= [0,0];
 
 	//depediences
 
 	let gameData = game;
+	let userInterface = ui;
 
 	boardFront.addEventListener('click',function(event){
 		
@@ -58,7 +60,7 @@ let APP = APP || {};
 					if(playersScores[activePlayer] > 2) {
 						alert('Player One Win!');
 					}
-					chequer.startNextTurn(gameData.board,boardField);
+					userInterface.nextTurn(gameData.board,boardField);
 					activePlayer = 1;
 				} else {
 					playersScores[activePlayer] += 1;
@@ -66,7 +68,8 @@ let APP = APP || {};
 					if(playersScores[activePlayer] > 2) {
 						alert('Player Two Win!');
 					}
-					chequer.startNextTurn(gameData.board,boardField);
+					// chequer.startNextTurn(gameData.board,boardField);
+					userInterface.nextTurn(gameData.board,boardField);
 					activePlayer = 0;
 				}	
 
@@ -80,9 +83,14 @@ let APP = APP || {};
 		
 	});
 
+	startBtn.addEventListener('click', function(){
+		userInterface.init(gameData.board,boardField, playerOneScore,playerTwoScore);
+	});
+	
+
 
 	return app;
 
-})(APP, GAME.gen);
+})(APP, GAME.gen,UI.fun);
 
 
