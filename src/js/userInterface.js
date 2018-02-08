@@ -43,18 +43,24 @@ let UI = UI || {};
 		}
 	
 	};
+	let displayWinner = function(el,player){
+		let ele = el[player];
+		ele.style.width = '200px';
+		ele.style.transition = '2s';
+	};
 
 	let init = function(arr, elemnt,scoreOne, scoreTwo){
 		nextTurn(arr, elemnt);
 		scoreOne.innerHTML = 0;
 		scoreTwo.innerHTML = 0;
-
+		
 	};
 
 
 	
 	sub.nextTurn = nextTurn;
 	sub.init= init;
+	sub.displayWinner = displayWinner;
 
 
 

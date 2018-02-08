@@ -11,6 +11,9 @@ let APP = APP || {};
 		playerOneScore = document.getElementById('js-player__one__score'),
 		playerTwoScore = document.getElementById('js-player__two__score'),
 		startBtn = document.getElementById('js-start'),
+		helpBtn = document.getElementById('js-help'),
+		closeBtn =  document.querySelector('.btn-close'),
+		crown =  document.getElementsByClassName('player__crown'),
 		activePlayer = 0,// value to check which player is active
 		playersScores= [0,0];
 
@@ -36,11 +39,11 @@ let APP = APP || {};
 
 
 			if(activePlayer === 0){
-				chequer = new gameData.Chequer('O');
+				chequer = new gameData.Chequer('X');
 				playerOne.classList.remove('active');
 				playerTwo.classList.add('active');
 			} else {
-				chequer = new gameData.Chequer('X');
+				chequer = new gameData.Chequer('O');
 				playerTwo.classList.remove('active');
 				playerOne.classList.add('active');		
 			}
@@ -58,7 +61,7 @@ let APP = APP || {};
 					playersScores[activePlayer] += 1;
 					playerOneScore.innerHTML = playersScores[activePlayer];
 					if(playersScores[activePlayer] > 2) {
-						alert('Player One Win!');
+						userInterface.displayWinner(crown,activePlayer);
 					}
 					userInterface.nextTurn(gameData.board,boardField);
 					activePlayer = 1;
@@ -66,7 +69,7 @@ let APP = APP || {};
 					playersScores[activePlayer] += 1;
 					playerTwoScore.innerHTML = playersScores[activePlayer];
 					if(playersScores[activePlayer] > 2) {
-						alert('Player Two Win!');
+						userInterface.displayWinner(crown,activePlayer);
 					}
 					// chequer.startNextTurn(gameData.board,boardField);
 					userInterface.nextTurn(gameData.board,boardField);
@@ -85,11 +88,22 @@ let APP = APP || {};
 
 	startBtn.addEventListener('click', function(){
 		userInterface.init(gameData.board,boardField, playerOneScore,playerTwoScore);
+		this.innerHTML = 'Again';
+		crown[0].style.width = '0px';
+		crown[1].style.width = '0px';
 	});
 	
+	helpBtn.addEventListener('click', function(){
+		document.querySelector('.overlay').style.display = "block";
+	});
 
+	closeBtn.addEventListener('click', function(){
+		document.querySelector('.overlay').style.display = "none";
+	});
 
 	return app;
+
+	userInterface.init(gameData.board,boardField, playerOneScore,playerTwoScore);
 
 })(APP, GAME.gen,UI.fun);
 

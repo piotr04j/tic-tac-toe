@@ -43,6 +43,11 @@ var UI = UI || {};
 			elements[_i].innerHTML = '';
 		}
 	};
+	var displayWinner = function displayWinner(el, player) {
+		var ele = el[player];
+		ele.style.width = '200px';
+		ele.style.transition = '2s';
+	};
 
 	var init = function init(arr, elemnt, scoreOne, scoreTwo) {
 		nextTurn(arr, elemnt);
@@ -52,6 +57,7 @@ var UI = UI || {};
 
 	sub.nextTurn = nextTurn;
 	sub.init = init;
+	sub.displayWinner = displayWinner;
 
 	return sub;
 })(UI);

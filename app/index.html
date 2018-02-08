@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic Tac Toe</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet" type="text/css">
 </head>
 
@@ -32,10 +33,12 @@
         </div>
         <div class="players">
             <div class="player player__one active" id="js-player-one">
+                <img src="./img/crown.svg" class="player__crown">
                 <p class="score" id="js-player__one__score">0</p>
                 <p class="name" id="js-player__one__name">Player One:</p>
             </div>
             <div class="player player__two" id="js-player-two">
+                <img src="./img/crown.svg" class="player__crown">
                 <p class="score" id="js-player__two__score">0</p>
                 <p class="name" id="js-player__two__name">Player Two:</p>
             </div>
@@ -47,11 +50,8 @@
             <button class="interface_btn" id="js-help">
                 help
             </button>
-            <!-- <button class="interface_btn" id="js-start">
-                player vs. player
-            </button> -->
             <button class="interface_btn" id="js-reset">
-                reset
+                option
             </button>
         </div>
         <div class="popup--help">
@@ -67,6 +67,16 @@
                     qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo
                     voluptas nulla pariatur?</p>
             </div>
+        </div>
+    </div>
+    <div class="overlay help">
+        <div class="popup">
+            <p>The goal of tic-tac-toe is to be the first player to get three in a row on a 3 x 3 grid.</p>
+            <p>If a player is able to draw three of their Xs or three of their Os in a row, then that player wins.</p>
+            <p>If all nine squares are filled and neither player has three in a row, the game is a draw.</p>
+            <p>Player who win three games is winner.</p>
+            <p>You can play versus player or computer (dwa poziomy trudnosci: NORMAL & EASY)</p>
+            <button class="btn-close">X</button>
         </div>
     </div>
     <script src="./js/userInterface.js" type="text/javascript"></script>
