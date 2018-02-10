@@ -12,15 +12,18 @@ let APP = APP || {};
 		playerTwoScore = document.getElementById('js-player__two__score'),
 		startBtn = document.getElementById('js-start'),
 		helpBtn = document.getElementById('js-help'),
+		optionBtn = document.getElementById('js-option'),
 		closeBtn =  document.querySelector('.btn-close'),
 		crown =  document.getElementsByClassName('player__crown'),
 		activePlayer = 0,// value to check which player is active
 		playersScores= [0,0];
 
+
 	//depediences
 
 	let gameData = game;
 	let userInterface = ui;
+
 
 	boardFront.addEventListener('click',function(event){
 		
@@ -42,10 +45,13 @@ let APP = APP || {};
 				chequer = new gameData.Chequer('X');
 				playerOne.classList.remove('active');
 				playerTwo.classList.add('active');
+				//if jak opcja aktywna 2
 			} else {
+				//if jak opcja aktywna 0
 				chequer = new gameData.Chequer('O');
 				playerTwo.classList.remove('active');
-				playerOne.classList.add('active');		
+				playerOne.classList.add('active');	
+				//if jak opcja aktywna 1	
 			}
 
 			// push chequer to arr
@@ -86,6 +92,7 @@ let APP = APP || {};
 		
 	});
 
+	//reset game and set values to 0
 	startBtn.addEventListener('click', function(){
 		userInterface.init(gameData.board,boardField, playerOneScore,playerTwoScore);
 		this.innerHTML = 'Again';
@@ -93,17 +100,26 @@ let APP = APP || {};
 		crown[1].style.width = '0px';
 	});
 	
+
+	// open help
 	helpBtn.addEventListener('click', function(){
-		document.querySelector('.overlay').style.display = "block";
+		document.querySelector('.help').style.display = 'block';
 	});
 
-	closeBtn.addEventListener('click', function(){
-		document.querySelector('.overlay').style.display = "none";
+	//open option
+	optionBtn.addEventListener('click',function(){
+		document.querySelector('.option').style.display = 'block';
 	});
+
+	//cloes popups
+	closeBtn.addEventListener('click', function(){
+		document.querySelector('.overlay').style.display = 'none';
+	});
+
+	//initialize game
+	userInterface.init(gameData.board,boardField, playerOneScore,playerTwoScore);
 
 	return app;
-
-	userInterface.init(gameData.board,boardField, playerOneScore,playerTwoScore);
 
 })(APP, GAME.gen,UI.fun);
 
