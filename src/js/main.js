@@ -107,9 +107,9 @@ let APP = APP || {};
 	});
 
 	//open option
-	optionBtn.addEventListener('click',function(){
-		document.querySelector('.option').style.display = 'block';
-	});
+	// optionBtn.addEventListener('click',function(){
+	// 	document.querySelector('.option').style.display = 'block';
+	// });
 
 	//cloes popups
 	closeBtn.addEventListener('click', function(){

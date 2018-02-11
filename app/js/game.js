@@ -53,18 +53,6 @@ var GAME = GAME || {};
 				checkHorizontal = true;
 			}
 		}
-		// for(let i = 0; i < 3; i++) {
-		// 	for (let j = 0; j < 3; j++) {
-		// 		if (this.type === arr[i][j] && this.type === arr[i][j+1] && this.type === arr[i][j+2]) {
-		// 			// checkHorizontal = true;
-		// 			// checkVertical = true;
-		// 			console.log('spelnino');
-		// 		} else if (this.type === arr[i][j] && this.type === arr[i+1][j] && this.type === arr[i+2][j]){
-		// 		} else {
-		// 			console.log('nie spelnionp')
-		// 		}
-		// 	}
-		// }
 
 		if (this.type === arr[0][0] && this.type === arr[1][1] && this.type === arr[2][2] || this.type === arr[0][2] && this.type === arr[1][1] && this.type === arr[2][0]) {
 			checkCross = true;
@@ -76,14 +64,48 @@ var GAME = GAME || {};
 		}
 	};
 
-	Chequer.prototype.cpuNormal = function (arr) {
-		//horizontal
-		for (var _i2 = 0; _i2 < 3; _i2++) {
-			if (this.type === arr[_i2][0] && this.type === arr[_i2][1] && this.type === arr[_i2][2]) {
-				checkVertical = true;
-			}
-		}
-	};
+	// Chequer.prototype.cpuNormal = function (arr) {
+
+	// 	for (let i = 0; i < 3; i++) {
+	// 		if ((this.type === arr[i][0] && this.type === arr[i][1]) || (this.type === arr[i][2] && this.type === arr[i][1]) || (this.type === arr[i][0] && this.type === arr[i][2]) {
+	// 			if (arr[i][0] === undefined || arr[i][0] === '') {
+	// 				arr[i][0] = this.type;
+	// 			} else if (arr[i][1] === undefined || arr[i][1] === '') {
+	// 				arr[i][1] = this.type;
+	// 			} else if (arr[i][2] === undefined || arr[i][2] === '') {
+	// 				arr[i][2] = this.type;
+	// 			}
+	// 		}
+	// 	}
+	// 	for (let j = 0; j < 3; j++) {
+	// 		if ((this.type === arr[0][j] && this.type === arr[1][j]) || (this.type === arr[2][j] && this.type === arr[1][j]) || (this.type === arr[0][j] && this.type === arr[2][j]) {
+	// 			if (arr[0][j] === undefined || arr[0][j] === '') {
+	// 				arr[0][j] = this.type;
+	// 			} else if (arr[1][j] === undefined || arr[1][j] === '') {
+	// 				arr[1][j] = this.type;
+	// 			} else if (arr[2][j] === undefined || arr[2][j] === '') {
+	// 				arr[2][j] = this.type;
+	// 			}
+	// 		}
+	// 	}
+	// 	if ((this.type === arr[0][0] && this.type === arr[1][1]) || (this.type === arr[0][0] && this.type === arr[2][2]) || (this.type === arr[2][2] && this.type === arr[1][1])) {
+	// 		if (arr[0][0] === undefined || arr[0][0] === '') {
+	// 			arr[0][0] = this.type;
+	// 		} else if (arr[1][1] === undefined || arr[1][1] === '') {
+	// 			arr[1][1] = this.type;
+	// 		} else if (arr[2][2] === undefined || arr[2][2] === '') {
+	// 			arr[2][2] = this.type;
+	// 		}
+	// 	} else if ((this.type === arr[0][2] && this.type === arr[1][1]) || (this.type === arr[2][0] && this.type === arr[1][1]) || (this.type === arr[0][2] && this.type === arr[2][0])) {
+	// 		if(arr[0][2] === undefined || arr[0][2] === '' ) {
+	// 			arr[0][2] = this.type;
+	// 		} else if (arr[1][1] === undefined || arr[1][1] === '' ){
+	// 			arr[1][1] = this.type;
+	// 		} else if (arr[2][0] === undefined || arr[2][0] === '' ){
+	// 			arr[2][0] = this.type;
+	// 		}
+	// 	}
+	// }
 
 	//sub module return
 
